@@ -19,7 +19,7 @@ namespace AliCloudAPITest
             var pk = RandomStr(5);
             var data = "[{\"id\":\"" + pk + "\"}]";
             target.Add(data);
-            var result = target.Push("main");
+			var result = target.Push("es_journal");
             Console.WriteLine(result);
             Console.WriteLine(pk);
 
@@ -59,7 +59,7 @@ namespace AliCloudAPITest
             docToUpdate["K2"] = "k2";
             docToUpdate["id"] = "2";
 
-            var result = target.Remove("999", "1").Add(docToAdd).Update(docToUpdate).Push("main");
+			var result = target.Remove("999", "1").Add(docToAdd).Update(docToUpdate).Push("es_journal");
 
             Assert.AreEqual("OK", result.Status);
 
@@ -74,7 +74,7 @@ namespace AliCloudAPITest
         {
             var target = new CloudsearchDoc(ApplicationName, api);
 
-            var result = target.Remove("999", "1").Push("main");
+			var result = target.Remove("999", "1").Push("es_journal");
 
             Assert.AreEqual("OK", result.Status);
         }
@@ -83,7 +83,7 @@ namespace AliCloudAPITest
         public void TestDocDetail()
         {
             var target = new CloudsearchDoc(ApplicationName, api);
-            target.Add("[{'id':1,'author':'nathan'}]").Push("main");
+			target.Add("[{'id':1,'author':'nathan'}]").Push("es_journal");
 
             var result = target.Detail("id", "1");
             Assert.AreEqual("OK", result.Status);
@@ -100,7 +100,7 @@ namespace AliCloudAPITest
 
             var data = "[{\"fields\":{\"a\":\"1\",\"b\":\"test\"},\"cmd\":\"UPDATE\"}]";
             target.Add(data);
-            var result = target.Push("main");
+			var result = target.Push("es_journal");
 
             Assert.AreEqual("OK", result.Status);
         }

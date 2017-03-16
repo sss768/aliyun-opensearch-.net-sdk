@@ -8,14 +8,18 @@ namespace Sample
     {
         private static void Main(string[] args)
         {
-            const string client_id = "TR2QyWfDusb0Tgce";
-            const string secret_id = "ZPJZBMEr2pcMP2fsGeHH36PzZeNYHW";
+			const string client_id = "LTAIPjkCtjCZvCIL";
+			const string secret_id = "giDKCpKxO4Cu6HPLGxOKSD5ubJpsxg";
 
-            var apiclient = new CloudsearchApi(client_id, secret_id, "http://opensearch-cn-hangzhou.aliyuncs.com");
+			var apiclient = new CloudsearchApi(client_id, secret_id, "http://opensearch-cn-hangzhou.aliyuncs.com");
             var search = new CloudsearchSearch(apiclient);
 
+	        var doc = new CloudsearchDoc("SUSHI_TEST", apiclient);
+
+			doc.Add()
+
             var builder = new QueryBuilder();
-            builder.ApplicationNames("datafiddleSearch")
+			builder.ApplicationNames("SUSHI_TEST")
                 .Query(new Query("云").And(new Query("搜索")))
                 .Config(new Config().Format(ReponseFormat.Json));
 

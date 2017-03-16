@@ -12,15 +12,15 @@ namespace AliCloudAPITest
     [TestFixture]
     public class CloudSearchApiAliyunBase
     {
-        public const string ApplicationName = "datafiddleSearch";
+		public const string ApplicationName = "SUSHI_TEST";
         protected CloudsearchApi api;
         protected CloudsearchApi mockApi;
 
 
         public CloudSearchApiAliyunBase()
         {
-            const string client_id = "TR2QyWfDusb0Tgce";
-            const string secret_id = "ZPJZBMEr2pcMP2fsGeHH36PzZeNYHW ";
+			const string client_id = "LTAIPjkCtjCZvCIL";
+			const string secret_id = "giDKCpKxO4Cu6HPLGxOKSD5ubJpsxg ";
 
 #if DEBUG
             api = new CloudsearchApi(client_id, secret_id, "http://opensearch-cn-hangzhou.aliyuncs.com", 1, "HMAC-SHA1",
