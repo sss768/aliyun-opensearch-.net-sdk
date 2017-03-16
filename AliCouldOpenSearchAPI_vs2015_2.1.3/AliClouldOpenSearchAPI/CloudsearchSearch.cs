@@ -4,7 +4,7 @@ using AliCloudOpenSearch.com.API.Builder;
 namespace AliCloudOpenSearch.com.API
 {
     /// <summary>
-    ///     Provide opensearch search features
+    ///  搜索功能   Provide opensearch search features
     /// </summary>
     public class CloudsearchSearch
     {

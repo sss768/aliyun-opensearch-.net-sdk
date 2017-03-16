@@ -4,6 +4,9 @@ using Newtonsoft.Json.Linq;
 
 namespace AliCloudOpenSearch.com.API
 {
+    /// <summary>
+    /// 下拉提示功能
+    /// </summary>
     public class CloudsearchSuggest
     {
         /// <summary>
